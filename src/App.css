@@ -8,3 +8,29 @@
   justify-content: center;
   align-items: center;
 }
+
+.message-container {
+  background-color: rgb(230, 230, 230);
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+}
+
+.clickable:hover {
+  background-color: rgb(232.5, 232.5, 232.5);
+  cursor: pointer;
+}
+
+.clickable:active {
+  background-color: rgb(235, 235, 235);
+  cursor: pointer;
+}
+
+/* .message-container:hover {
+  background-color: rgb(232.5, 232.5, 232.5);
+  cursor: pointer;
+}
+
+.message-container:active {
+  background-color: rgb(235, 235, 235);
+  cursor: pointer;
+} */

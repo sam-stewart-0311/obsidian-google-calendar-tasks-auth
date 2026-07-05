@@ -9,12 +9,12 @@ function App() {
 
   return (
     <div className='container-c main'>
-      <div className='container-c'>
+      <div className={`container-c message-container ${code && "clickable"}`}>
         {
           code ? (
-            <span>{code}</span>
+            <span>Copy this code: {code}</span>
           ) : error ? (
-            <span>{error}</span>
+            <span>Error: {error}</span>
           ) : 
           <span>nothing to see here...</span>
         }
