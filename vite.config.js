@@ -6,6 +6,5 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'docs'
-  },
-  base: '/obsidian-google-calendar-tasks-auth/',
+  }
 })
