@@ -9,6 +9,19 @@
   align-items: center;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: rgb(100, 100, 100);
+  margin: 0;
+}
+
 .message-container {
   position: relative;
   background-color: rgb(235, 235, 235);
@@ -26,14 +39,19 @@
   cursor: pointer;
 }
 
-/* .message-container:hover {
-  background-color: rgb(232.5, 232.5, 232.5);
-  cursor: pointer;
+.code-text {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9rem;
 }
 
-.message-container:active {
-  background-color: rgb(235, 235, 235);
-  cursor: pointer;
+.status-text {
+  font-size: 0.95rem;
+  color: rgb(120, 120, 120);
+  margin: 0;
+}
+
+/* .status-text.error {
+  color: rgb(176, 0, 32);
 } */
 
 .copied-badge {

@@ -39,18 +39,19 @@ function App() {
 
   return (
     <div className='container-c main'>
-      <div 
-        className={`container-c message-container ${code && "clickable"}`}
-        onClick={code && handleCopy}
-      >
-        {
-          code ? (
-            <span><strong>Copy Code:</strong> {code}</span>
-          ) : error ? (
-            <span><strong>Error:</strong> {error}</span>
-          ) : 
-          <span>nothing to see here...</span>
-        }
+      <div className="content">
+        {code ? (
+          <>
+            <p className="label">Copy your code below</p>
+            <div className="message-container clickable" onClick={handleCopy}>
+              <span className="code-text">{code}</span>
+            </div>
+          </>
+        ) : error ? (
+          <p className="status-text error">Authorization failed: {error}</p>
+        ) : (
+          <p className="status-text">Nothing to see here...</p>
+        )}
       </div>
       {copied && (
         <div
