@@ -45,9 +45,9 @@ function App() {
       >
         {
           code ? (
-            <span>Code: {code}</span>
+            <span><strong>Copy Code:</strong> {code}</span>
           ) : error ? (
-            <span>Error: {error}</span>
+            <span><strong>Error:</strong> {error}</span>
           ) : 
           <span>nothing to see here...</span>
         }
