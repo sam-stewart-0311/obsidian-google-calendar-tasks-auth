@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 
 function App() {
@@ -10,16 +10,31 @@ function App() {
   const [copied, setCopied] = useState(false);
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
+  const timeoutRef = useRef(null);
+
   const handleCopy = async (e) => {
+    const code = new URLSearchParams(window.location.search).get("code");
     if (!code) return;
 
     await navigator.clipboard.writeText(code);
 
-    // capture cursor position
-    setPos({ x: e.clientX, y: e.clientY });
+    // clear previous animation timer
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
 
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1000);
+    // reset animation state first (important trick)
+    setCopied(false);
+
+    // force reflow so animation can restart cleanly
+    requestAnimationFrame(() => {
+      setPos({ x: e.clientX, y: e.clientY });
+      setCopied(true);
+
+      timeoutRef.current = setTimeout(() => {
+        setCopied(false);
+      }, 1000);
+    });
   };
 
   return (
