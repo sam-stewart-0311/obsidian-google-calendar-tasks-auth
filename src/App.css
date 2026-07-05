@@ -10,18 +10,19 @@
 }
 
 .message-container {
-  background-color: rgb(230, 230, 230);
+  position: relative;
+  background-color: rgb(235, 235, 235);
   padding: 0.5rem 2rem;
   border-radius: 2rem;
 }
 
 .clickable:hover {
-  background-color: rgb(232.5, 232.5, 232.5);
+  /* background-color: rgb(242.5, 242.5, 242.5); */
   cursor: pointer;
 }
 
 .clickable:active {
-  background-color: rgb(235, 235, 235);
+  /* background-color: rgb(245, 245, 245); */
   cursor: pointer;
 }
 
@@ -34,3 +35,26 @@
   background-color: rgb(235, 235, 235);
   cursor: pointer;
 } */
+
+.copied-badge {
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
