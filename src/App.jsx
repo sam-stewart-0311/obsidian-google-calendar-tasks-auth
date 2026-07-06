@@ -58,8 +58,8 @@ function App() {
           className="copied-badge"
           style={{
             position: "fixed",
-            left: pos.x + 10,
-            top: pos.y + 10,
+            left: pos.x - 60,
+            top: pos.y - 35,
             pointerEvents: "none",
           }}
         >
